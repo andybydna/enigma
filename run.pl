@@ -1,6 +1,7 @@
 #!/usr/bin/env perl
 use strict;
 use warnings;
+use feature 'say';
 use FindBin::libs;
 
 use Enigma;
@@ -25,5 +26,6 @@ my $enigma = Enigma->new({
 });
 
 use DDP;
-p $enigma->spindle->reflector->map;
-p $enigma->spindle->reflector->inverse_map;
+
+my @r = $enigma->press_keys('HELLOWORLD');
+p @r
